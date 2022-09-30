@@ -6,11 +6,12 @@ const app = express();
 const apiId="d3d7e7b62558f3717345c1b7cd1f8ee0";
 
 app.use(bodyParser.urlencoded({extended: true}));
-
+app.use(express.static("public"));
 
 
 app.get("/", (req, res) => {
-    res.sendFile(__dirname+ "/index.html");
+    res.sendFile("index.html");
+    // res.sendFile(__dirname+ "/style.css");
 });
 
 app.post("/",(req,res)=>{
@@ -19,13 +20,13 @@ app.post("/",(req,res)=>{
     const city=req.body.cityName;
     const url =
     `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiId}&units=metric`;
-    
+
     https.get(url, (response) => {
     console.log(response.statusCode);
 
     response.on("data",(data)=>{
         const weatherData=JSON.parse(data);
-        console.log(weatherData);
+        // console.log(weatherData);
         const temp=weatherData.main.temp;
         const description= weatherData.weather[0].description;
         const icon=weatherData.weather[0].icon;
