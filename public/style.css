@@ -1,7 +1,8 @@
 
 body{
-    background: linear-gradient(to bottom right,rgb(29, 28, 28),violet);
-    height: 649px;
+    background: linear-gradient(to bottom right,rgb(67, 75, 148),rgb(255, 198, 43));
+    height: 100vh;
+
 }
 
 form{
@@ -10,9 +11,17 @@ form{
     align-items: center;
 }
 .card{
-    margin-top: 100px;
+    margin-top: 80px;
 
 }
 .card-body{
+    /* background: linear-gradient(to bottom right,rgb(67, 75, 148),rgb(255, 198, 43)); */
     background-color: white;
+    padding-bottom: 6px;
+}
+.icon{
+    margin-top: -30px;
+}
+.btn{
+    margin-top: 10px;
 }
